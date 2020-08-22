@@ -1,0 +1,39 @@
+class Solution {
+public:
+    
+    string helper(string str, string prefix)
+    {
+        int n=str.length();
+        int m=prefix.length();
+        string result;
+        
+        for (int i=0,j=0; i<n && i<m; i++, j++)
+        {
+            if(str[i]!=prefix[j])
+                break;
+            result.push_back(prefix[i]);
+        }
+        
+        return result;
+    }
+    string longestCommonPrefix(vector<string>& strs) {
+        
+        
+        
+    
+        int n=strs.size();
+        if(n==0)
+        {
+            //cout<<n<<" ";
+            return "";
+        }
+        string prefix=strs[0];
+        for (int i=1;i<n;i++)
+        {   cout<<i<<" ";
+            prefix=helper(strs[i],prefix);
+            cout<<prefix<<" ";
+        }
+            
+        return prefix;
+    }
+};
