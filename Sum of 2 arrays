@@ -1,0 +1,43 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+
+int main()
+{
+    int T;
+    cin>>T;
+    while (T--)
+    {
+        int n,m;
+        cin>>n;
+        int arr1[n];
+        for(int a=0;a<n;a++)
+            cin>>arr1[a];
+        cin>>m;
+        int arr2[m];
+        for (int b=0;b<m;b++)
+           cin>>arr2[b];
+        int num1=0;
+        int num2=0;
+        int temp=1;
+        for (int i=n-1;i>=0;i--)
+        {
+
+            num1=num1+(arr1[i]*temp);
+            temp=temp*10;
+        }
+        temp=1;
+        for (int j=m-1;j>=0;j--)
+        {
+
+            num2=num2+arr2[j]*temp;
+            temp=temp*10;
+           // cout<<num2
+        }
+
+     //  cout<<num1<<" "<<num2<<" ";
+
+        cout<<num1+num2<<"\n";
+    }
+}
