@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main()
+{
+    ll num;
+    cin>>num;
+    ll temp1=num;
+    ll temp2=num;
+    int count=0;
+    while (temp1>0)
+    {
+      temp1=temp1/10;
+      count++;
+    }
+    int sum=0;
+
+
+    while (temp2>0)
+    {
+        ll rem=temp2%10;
+       // cout<<rem<<" "<<count<<" ";
+        ll m=pow(rem,count);
+        //cout<<m<<" ";
+      //  cout<<sum<<" ";
+        sum=sum+m;
+        temp2=temp2/10;
+        //cout<<sum<<" ";
+    }
+
+   // cout<<count<<" ";
+    //cout<<sum<<" ";
+
+    if(sum==num)
+        cout<<"YES";
+    else
+        cout<<"NO";
+}
